@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>OFR Responsive Image Maps</title>
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1" />
+	<script src="ios-orientationchange-fix.min.js"></script>
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		div {
+			width: 100%;
+		}
+		img[usemap] {
+			border: none;
+			height: auto;
+			max-width: 100%;
+			width: auto;
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="jquery.rwdImageMaps.min.js"></script>
+</head>
+<body>
+<div id="ofr_map">
+	<img src="OFR1.jpg" width="1600" height="1415" usemap="#image-map" alt="" />
+	<map name="image-map">
+		<area target="" alt="one" title="one" href="#" coords="1,2,153,154" shape="rect">
+		<area target="" alt="two" title="two" href="#" coords="168,2,462,154" shape="rect">
+		<area target="" alt="three" title="three" href="#" coords="479,2,633,233" shape="rect">
+		<area target="" alt="four" title="four" href="#" coords="644,2,911,112" shape="rect">
+		<area target="" alt="five" title="five" href="#" coords="644,121,911,233" shape="rect">
+		<area target="" alt="six" title="six" href="#" coords="931,0,1133,285" shape="rect">
+		<area target="" alt="seven" title="seven" href="#" coords="1151,0,1360,285" shape="rect">
+		<area target="" alt="eight" title="eight" href="#" coords="1376,0,1598,154" shape="rect">
+		<area target="" alt="nine" title="nine" href="#" coords="1376,168,1598,462" shape="rect">
+		<area target="" alt="ten" title="ten" href="#" coords="1,167,285,310" shape="rect">
+		<area target="" alt="eleven" title="eleven" href="#" coords="1,323,285,461" shape="rect">
+		<area target="" alt="twelve" title="twelve" href="#" coords="298,167,461,461" shape="rect">
+		<area target="" alt="thirteen" title="thirteen" href="#" coords="480,242,754,361" shape="rect">
+		<area target="" alt="fourteen" title="fourteen" href="#" coords="767,242,910,361" shape="rect">
+		<area target="" alt="fifteen" title="fifteen" href="#" coords="931,297,1360,463" shape="rect">
+		<area target="" alt="sixteen" title="sixteen" href="#" coords="1,473,153,767" shape="rect">
+		<area target="" alt="seventeen" title="seventeen" href="#" coords="165,473,459,637" shape="rect">
+		<area target="" alt="eighteen" title="eighteen" href="#" coords="476,384,910,846" shape="rect">
+		<area target="" alt="nineteen" title="nineteen" href="#" coords="928,474,1166,769" shape="rect">
+		<area target="" alt="twenty" title="twenty" href="#" coords="1184,474,1599,613" shape="rect">
+		<area target="" alt="twenty-one" title="twenty-one" href="#" coords="1184,626,1599,768" shape="rect">
+		<area target="" alt="twenty-two" title="twenty-two" href="#" coords="1,782,152,935" shape="rect">
+		<area target="" alt="twenty-three" title="twenty-three" href="#" coords="164,650,308,935" shape="rect">
+		<area target="" alt="twenty-four" title="twenty-four" href="#" coords="321,650,460,935" shape="rect">
+		<area target="" alt="twenty-five" title="twenty-five" href="#" coords="477,861,622,1045" shape="rect">
+		<area target="" alt="twenty-six" title="twenty-six" href="#" coords="634,861,913,1045" shape="rect">
+		<area target="" alt="twenty-seven" title="twenty-seven" href="#" coords="927,780,1356,935" shape="rect">
+		<area target="" alt="twenty-eight" title="twenty-eight" href="#" coords="1374,780,1599,935" shape="rect">
+		<area target="" alt="twenty-nine" title="twenty-nine" href="#" coords="1,953,153,1247" shape="rect">
+		<area target="" alt="thirty" title="thirty" href="#" coords="165,953,460,1116" shape="rect">
+		<area target="" alt="thirty-one" title="thirty-one" href="#" coords="1,1262,152,1414" shape="rect">
+		<area target="" alt="thirty-two" title="thirty-two" href="#" coords="165,1129,308,1414" shape="rect">
+		<area target="" alt="thirty-three" title="thirty-three" href="#" coords="321,1129,459,1414" shape="rect">
+		<area target="" alt="thirty-four" title="thirty-four" href="#" coords="477,1059,746,1232" shape="rect">
+		<area target="" alt="thirty-five" title="thirty-five" href="#" coords="477,1247,746,1414" shape="rect">
+		<area target="" alt="thirty-six" title="thirty-six" href="#" coords="757,1059,912,1414" shape="rect">
+		<area target="" alt="thirty-seven" title="thirty-seven" href="#" coords="929,951,1167,1245" shape="rect">
+		<area target="" alt="thirty-eight" title="thirty-eight" href="#" coords="1185,949,1599,1089" shape="rect">
+		<area target="" alt="thirty-nine" title="thirty-nine" href="#" coords="1185,1101,1599,1245" shape="rect">
+		<area target="" alt="forty" title="forty" href="#" coords="929,1257,1357,1411" shape="rect">
+		<area target="" alt="forty-one" title="forty-one" href="#" coords="1376,1258,1599,1411" shape="rect">
+	</map>
+</div>
+
+
+<script>
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+	
+	$('area').on('click', function() {
+		alert('You clicked the area - number ' + $(this).attr('alt'));
+		var scrolly = typeof window.pageYOffset != 'undefined' ? window.pageYOffset	: document.documentElement.scrollTop;
+		var scrollx = typeof window.pageXOffset != 'undefined' ? window.pageXOffset	: document.documentElement.scrollLeft;
+		var ofr_map = document.getElementById("ofr_map");
+		//ofr_map.scrollBy(0, scrolly);
+		//window.scrollBy(0, scrolly);
+	});
+});
+
+</script>
+</body>
+</html>
